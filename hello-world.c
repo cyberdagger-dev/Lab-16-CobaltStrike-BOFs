@@ -1,0 +1,14 @@
+#include <Windows.h>
+#include "beacon.h"
+
+//this is called a macro. it's a find/replace for a function
+//## are pre-processing instructions used for concatenation of it. so printf's arguments will now be BeaconPrintf's arguemtns
+//#define printf(format, args...) { BeaconPrintf(CALLBACK_OUTPUT, format, ## args); }
+
+DECLSPEC_IMPORT DWORD WINAPI kernel32$GetCurrentProcessId();
+
+
+int go() {
+    printf("hello world %d", kernel32$GetCurrentProcessId());
+    return 0;
+}
